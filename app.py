@@ -1,34 +1,48 @@
+import os
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from random import random, randint
 
 app = Flask(__name__)
 
+app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qgeyxyqrnuxpyi:7fda5a2de7f65236bfa7538a84f3dd015c16a231779d6b7b551480e8918979b7@ec2-18-232-254-253.compute-1.amazonaws.com:5432/d6u7c86osmacim'
 
 db = SQLAlchemy(app)
 
-class Truth(db.Model):
-	__tablename__ = "Truth"
-
-	_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	description = db.Column(db.String(200), nullable=False)
-
-	def __init__(self, description):
-		self.description = description
-
-class Dare(db.Model):
-	__tablename__ = "Dare"
-
-	_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	description = db.Column(db.String(200), nullable=False)
-
-	def __init__(self, description):
-		self.description = description
+from models import Truth, Dare
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", title="Play Truth or Dare", content="Click on the buttons below!")
+
+@app.route("/truth")
+def truth():
+    prob = random()
+    id_ = randint(1, 100)
+
+    if prob < 0.7:  # generate truth
+        title = "Truth"
+        content=Truth.query.filter_by(id=id_).first().description
+    else:  # generate dare
+        title = "Dare"
+        content=Dare.query.filter_by(id=id_).first().description
+    
+    return render_template("home.html", title=title, content=content)
+
+@app.route("/dare")
+def dare():
+    prob = random()
+    id_ = randint(1, 100)
+
+    if prob < 0.7:  # generate dare
+        title = "Dare"
+        content=Dare.query.filter_by(id=id_).first().description
+    else:  # generate truth
+        title = "Truth"
+        content=Truth.query.filter_by(id=id_).first().description
+
+    return render_template("home.html", title=title, content=content)
 
 @app.route("/about")
 def about():
