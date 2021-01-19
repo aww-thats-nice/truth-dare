@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Randomizer</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <div class="row">
+    	<div class="col-sm-2"></div>
+      	<div class="col-sm-8">
+    		<h1> AWW Kind Act Randomizer </h1>
+    		<p> Use this to generate a random act of kindness </p>
+    	</div>
+    	<div class="col-sm-2"></div>
+	</div>
+
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="card" style="height: 15rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ title }}
+            </h5>
+            <p class="card-text">
+              {{ content }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          onclick="document.location.href=this.getAttribute('href');"
+          href="/randomizer/generate"
+        >
+          Generate
+        </button>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    
+    {% endblock %}
+  </body>
+</html>

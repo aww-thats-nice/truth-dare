@@ -2,57 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>About Us</title>
   </head>
   <body>
     {% extends "template.html" %}
     {% block content %}
 
     <h1> AWW, that's nice! </h1>
-    <p> A rough implementation of the game is shown below </p>
+    <p> Nice landing page goes here! </p>
+    <p> A paragraph describing our vision and mission, possibly </p>
 
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-        <div class="card" style="height: 15rem;">
-          <div class="card-body">
-            <h5 class="card-title">
-              {{ title }}
-            </h5>
-            <p class="card-text">
-              {{ content }}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3"></div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3 d-flex justify-content-center">
-        <button
-          type="button"
-          class="btn btn-info btn-lg"
-          onclick="document.location.href=this.getAttribute('href');"
-          href="/truth"
-        >
-          Mostly Truth
-        </button>
-      </div>
-      <div class="col-sm-3 d-flex justify-content-center">
-        <button
-          type="button"
-          class="btn btn-warning btn-lg"
-          onclick="document.location.href=this.getAttribute('href');"
-          href="/dare"
-        >
-          Mostly Dare
-        </button>
-      </div>
-      <div class="col-sm-3"></div>
-    </div>
-    
     {% endblock %}
   </body>
 </html>

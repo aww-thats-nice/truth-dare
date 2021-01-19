@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bingo</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <div class="row">
+    	<div class="col-sm-2"></div>
+      	<div class="col-sm-8">
+    		<h1> AWW Bingo </h1>
+    		<p> Fill the card and be kind! </p>
+    	</div>
+    	<div class="col-sm-2"></div>
+	  </div>
+
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <table class="table table-bordered">
+          <tr>
+            <td>{{ bingo_array[0].description }}</td>
+            <td>{{ bingo_array[1].description }}</td>
+            <td>{{ bingo_array[2].description }}</td>
+            <td>{{ bingo_array[3].description }}</td>
+            <td>{{ bingo_array[4].description }}</td>
+          </tr>
+          <tr>
+            <td>{{ bingo_array[5].description }}</td>
+            <td>{{ bingo_array[6].description }}</td>
+            <td>{{ bingo_array[7].description }}</td>
+            <td>{{ bingo_array[8].description }}</td>
+            <td>{{ bingo_array[9].description }}</td>
+          </tr>
+          <tr>
+            <td>{{ bingo_array[10].description }}</td>
+            <td>{{ bingo_array[11].description }}</td>
+            <td>{{ bingo_array[12].description }}</td>
+            <td>{{ bingo_array[13].description }}</td>
+            <td>{{ bingo_array[14].description }}</td>
+          </tr>
+          <tr>
+            <td>{{ bingo_array[15].description }}</td>
+            <td>{{ bingo_array[16].description }}</td>
+            <td>{{ bingo_array[17].description }}</td>
+            <td>{{ bingo_array[18].description }}</td>
+            <td>{{ bingo_array[19].description }}</td>
+          </tr>
+          <tr>
+            <td>{{ bingo_array[20].description }}</td>
+            <td>{{ bingo_array[21].description }}</td>
+            <td>{{ bingo_array[22].description }}</td>
+            <td>{{ bingo_array[23].description }}</td>
+            <td>{{ bingo_array[24].description }}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    
+    {% endblock %}
+  </body>
+</html>
