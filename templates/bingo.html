@@ -167,7 +167,10 @@
         $.ajax("{{ url_for('check') }}", {
             data: JSON.stringify(jsonToTransfer),
             contentType: 'application/json',
-            type: 'POST'
+            type: 'POST',
+            success: function(response) {
+                document.location.href = "{{ url_for('bingo') }}";
+          	}
         });
         event.preventDefault();
 	}
@@ -177,7 +180,10 @@
         $.ajax("{{ url_for('uncheck') }}", {
             data: JSON.stringify(jsonToTransfer),
             contentType: 'application/json',
-            type: 'POST'
+            type: 'POST',
+            success: function(response) {
+                document.location.href = "{{ url_for('bingo') }}";
+          	}
         });
         event.preventDefault();
 	}
