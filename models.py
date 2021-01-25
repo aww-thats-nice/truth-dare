@@ -74,3 +74,20 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+class FulfillTask(db.Model):
+    __tablename__ = "FulfillTask"
+
+    # TODO: Implement foreign key
+    user_id = db.Column(db.Integer, primary_key=True)
+    bingo_id = db.Column(db.Integer, primary_key=True)
+
+    def __repr__(self):
+        return '<user {} completes task {}>'.format(self.user_id, self.bingo_id)
+    
+    def serialize(self):
+        return {
+            'user_id': self.user_id, 
+            'bingo_id': self.bingo_id,
+        }
+

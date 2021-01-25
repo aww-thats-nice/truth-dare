@@ -13,7 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login = LoginManager(app)
 
-from models import Truth, Dare, Bingo, User
+from models import Truth, Dare, Bingo, User, FulfillTask
 from forms import LoginForm, RegistrationForm
 
 @app.route("/")
@@ -71,7 +71,8 @@ def generate():
 @login_required
 def bingo():
     bingo_array = Bingo.query.all()
-    return render_template("bingo.html", bingo_array=bingo_array)
+    user_prog = list(map(lambda x: x.bingo_id, FulfillTask.query.filter_by(user_id=current_user.id).all()))
+    return render_template("bingo.html", bingo_array=bingo_array, user_prog=user_prog)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -112,6 +113,26 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/check', methods=['POST'])
+@login_required
+def check():
+    response = request.get_json()
+    task = FulfillTask(user_id=current_user.id, bingo_id=response['id'])
+    db.session.add(task)
+    db.session.commit()
+    flash('Bingo task checked!')
+    return redirect(url_for('bingo'))
+
+@app.route('/uncheck', methods=['POST'])
+@login_required
+def uncheck():
+    response = request.get_json()
+    task = FulfillTask.query.filter_by(user_id=current_user.id, bingo_id=response['id']).first()
+    db.session.delete(task)
+    db.session.commit()
+    flash('Bingo task unchecked!')
+    return redirect(url_for('bingo'))
 
 if __name__ == "__main__":
     app.run(debug=True)

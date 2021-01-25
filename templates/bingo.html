@@ -22,44 +22,166 @@
       <div class="col-sm-8">
         <table class="table table-bordered">
           <tr>
-            <td>{{ bingo_array[0].description }}</td>
-            <td>{{ bingo_array[1].description }}</td>
-            <td>{{ bingo_array[2].description }}</td>
-            <td>{{ bingo_array[3].description }}</td>
-            <td>{{ bingo_array[4].description }}</td>
+          	{% if 1 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[0].description }} <button type="button" class="btn btn-danger" onClick="uncheck(1)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[0].description }} <button type="button" class="btn btn-success" onClick="check(1)">Check</button></td>
+            {% endif %}
+            {% if 2 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[1].description }} <button type="button" class="btn btn-danger" onClick="uncheck(2)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[1].description }} <button type="button" class="btn btn-success" onClick="check(2)">Check</button></td>
+            {% endif %}
+            {% if 3 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[2].description }} <button type="button" class="btn btn-danger" onClick="uncheck(3)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[2].description }} <button type="button" class="btn btn-success" onClick="check(3)">Check</button></td>
+            {% endif %}
+            {% if 4 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[3].description }} <button type="button" class="btn btn-danger" onClick="uncheck(4)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[3].description }} <button type="button" class="btn btn-success" onClick="check(4)">Check</button></td>
+            {% endif %}
+            {% if 5 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[4].description }} <button type="button" class="btn btn-danger" onClick="uncheck(5)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[4].description }} <button type="button" class="btn btn-success" onClick="check(5)">Check</button></td>
+            {% endif %}
           </tr>
           <tr>
-            <td>{{ bingo_array[5].description }}</td>
-            <td>{{ bingo_array[6].description }}</td>
-            <td>{{ bingo_array[7].description }}</td>
-            <td>{{ bingo_array[8].description }}</td>
-            <td>{{ bingo_array[9].description }}</td>
+            {% if 6 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[5].description }} <button type="button" class="btn btn-danger" onClick="uncheck(6)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[5].description }} <button type="button" class="btn btn-success" onClick="check(6)">Check</button></td>
+            {% endif %}
+            {% if 7 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[6].description }} <button type="button" class="btn btn-danger" onClick="uncheck(7)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[6].description }} <button type="button" class="btn btn-success" onClick="check(7)">Check</button></td>
+            {% endif %}
+            {% if 8 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[7].description }} <button type="button" class="btn btn-danger" onClick="uncheck(8)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[7].description }} <button type="button" class="btn btn-success" onClick="check(8)">Check</button></td>
+            {% endif %}
+            {% if 9 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[8].description }} <button type="button" class="btn btn-danger" onClick="uncheck(9)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[8].description }} <button type="button" class="btn btn-success" onClick="check(9)">Check</button></td>
+            {% endif %}
+            {% if 10 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[9].description }} <button type="button" class="btn btn-danger" onClick="uncheck(10)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[9].description }} <button type="button" class="btn btn-success" onClick="check(10)">Check</button></td>
+            {% endif %}
           </tr>
           <tr>
-            <td>{{ bingo_array[10].description }}</td>
-            <td>{{ bingo_array[11].description }}</td>
-            <td>{{ bingo_array[12].description }}</td>
-            <td>{{ bingo_array[13].description }}</td>
-            <td>{{ bingo_array[14].description }}</td>
+            {% if 11 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[10].description }} <button type="button" class="btn btn-danger" onClick="uncheck(11)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[10].description }} <button type="button" class="btn btn-success" onClick="check(11)">Check</button></td>
+            {% endif %}
+            {% if 12 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[11].description }} <button type="button" class="btn btn-danger" onClick="uncheck(12)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[11].description }} <button type="button" class="btn btn-success" onClick="check(12)">Check</button></td>
+            {% endif %}
+            {% if 13 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[12].description }} <button type="button" class="btn btn-danger" onClick="uncheck(13)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[12].description }} <button type="button" class="btn btn-success" onClick="check(13)">Check</button></td>
+            {% endif %}
+            {% if 14 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[13].description }} <button type="button" class="btn btn-danger" onClick="uncheck(14)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[13].description }} <button type="button" class="btn btn-success" onClick="check(14)">Check</button></td>
+            {% endif %}
+            {% if 15 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[14].description }} <button type="button" class="btn btn-danger" onClick="uncheck(15)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[14].description }} <button type="button" class="btn btn-success" onClick="check(15)">Check</button></td>
+            {% endif %}
           </tr>
           <tr>
-            <td>{{ bingo_array[15].description }}</td>
-            <td>{{ bingo_array[16].description }}</td>
-            <td>{{ bingo_array[17].description }}</td>
-            <td>{{ bingo_array[18].description }}</td>
-            <td>{{ bingo_array[19].description }}</td>
+            {% if 16 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[15].description }} <button type="button" class="btn btn-danger" onClick="uncheck(16)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[15].description }} <button type="button" class="btn btn-success" onClick="check(16)">Check</button></td>
+            {% endif %}
+            {% if 17 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[16].description }} <button type="button" class="btn btn-danger" onClick="uncheck(17)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[16].description }} <button type="button" class="btn btn-success" onClick="check(17)">Check</button></td>
+            {% endif %}
+            {% if 18 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[17].description }} <button type="button" class="btn btn-danger" onClick="uncheck(18)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[17].description }} <button type="button" class="btn btn-success" onClick="check(18)">Check</button></td>
+            {% endif %}
+            {% if 19 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[18].description }} <button type="button" class="btn btn-danger" onClick="uncheck(19)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[18].description }} <button type="button" class="btn btn-success" onClick="check(19)">Check</button></td>
+            {% endif %}
+            {% if 20 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[19].description }} <button type="button" class="btn btn-danger" onClick="uncheck(20)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[19].description }} <button type="button" class="btn btn-success" onClick="check(20)">Check</button></td>
+            {% endif %}
           </tr>
           <tr>
-            <td>{{ bingo_array[20].description }}</td>
-            <td>{{ bingo_array[21].description }}</td>
-            <td>{{ bingo_array[22].description }}</td>
-            <td>{{ bingo_array[23].description }}</td>
-            <td>{{ bingo_array[24].description }}</td>
+            {% if 21 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[20].description }} <button type="button" class="btn btn-danger" onClick="uncheck(21)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[20].description }} <button type="button" class="btn btn-success" onClick="check(21)">Check</button></td>
+            {% endif %}
+            {% if 22 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[21].description }} <button type="button" class="btn btn-danger" onClick="uncheck(22)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[21].description }} <button type="button" class="btn btn-success" onClick="check(22)">Check</button></td>
+            {% endif %}
+            {% if 23 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[22].description }} <button type="button" class="btn btn-danger" onClick="uncheck(23)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[22].description }} <button type="button" class="btn btn-success" onClick="check(23)">Check</button></td>
+            {% endif %}
+            {% if 24 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[23].description }} <button type="button" class="btn btn-danger" onClick="uncheck(24)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[23].description }} <button type="button" class="btn btn-success" onClick="check(24)">Check</button></td>
+            {% endif %}
+            {% if 25 in user_prog %}
+            	<td class="bg-warning">{{ bingo_array[24].description }} <button type="button" class="btn btn-danger" onClick="uncheck(25)">Uncheck</button></td>
+            {% else %}
+            	<td>{{ bingo_array[24].description }} <button type="button" class="btn btn-success" onClick="check(25)">Check</button></td>
+            {% endif %}
           </tr>
         </table>
       </div>
       <div class="col-sm-2"></div>
     </div>
+
+    <script>
+	function check(id) {
+	  	var jsonToTransfer = {"id": id};
+        $.ajax("{{ url_for('check') }}", {
+            data: JSON.stringify(jsonToTransfer),
+            contentType: 'application/json',
+            type: 'POST'
+        });
+        event.preventDefault();
+	}
+
+	function uncheck(id) {
+	  	var jsonToTransfer = {"id": id};
+        $.ajax("{{ url_for('uncheck') }}", {
+            data: JSON.stringify(jsonToTransfer),
+            contentType: 'application/json',
+            type: 'POST'
+        });
+        event.preventDefault();
+	}
+	</script>
     
     {% endblock %}
   </body>
