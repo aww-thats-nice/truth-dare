@@ -13,6 +13,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login = LoginManager(app)
 
+NUMBER_OF_ROWS = 50
+
 from models import Truth, Dare, Bingo, User, FulfillTask
 from forms import LoginForm, RegistrationForm
 
@@ -27,7 +29,7 @@ def card():
 @app.route("/card/truth")
 def truth():
     prob = random()
-    id_ = randint(1, 100)
+    id_ = randint(1, NUMBER_OF_ROWS)
 
     if prob < 0.7:  # generate truth
         title = "Truth"
@@ -41,7 +43,7 @@ def truth():
 @app.route("/card/dare")
 def dare():
     prob = random()
-    id_ = randint(1, 100)
+    id_ = randint(1, NUMBER_OF_ROWS)
 
     if prob < 0.7:  # generate dare
         title = "Dare"
@@ -62,7 +64,7 @@ def randomizer():
 
 @app.route("/randomizer/generate")
 def generate():
-    id_ = randint(1, 100)
+    id_ = randint(1, NUMBER_OF_ROWS)
     title = "Do this today!"
     content = Dare.query.filter_by(id=id_).first().description
     return render_template("randomizer.html", title=title, content=content)
