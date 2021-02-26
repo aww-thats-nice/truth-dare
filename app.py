@@ -58,6 +58,10 @@ def dare():
 def about():
     return render_template("about.html")
 
+@app.route("/how")
+def how():
+    return render_template("how-to.html")
+
 @app.route("/randomizer")
 def randomizer():
     return render_template("randomizer.html", title="Generate a Random Act of Kindness", content="Click the button below!")
